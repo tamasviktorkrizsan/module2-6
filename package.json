@@ -1,6 +1,5 @@
 {
   "name": "module2",
-  "type": "module",
   "scripts": {
     "wdio": "wdio run ./wdio.conf.ts"
   },
