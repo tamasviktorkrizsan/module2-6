@@ -26,15 +26,15 @@ Feature: Login
    Examples:
      | email               | password     | message              |
      | wrong_user@mail.com | Testing2025+ | Password is required |
-#
-#
-#  @UC-3
-#  Scenario Outline: Test Login form with credentials by passing invalid Username or Password
-#    Given the user enters email "<email>"
-#    And  the user enters password "<password>"
-#    When the user clicks the Login button
-#    Then the error "<message>" should be displayed
-#
-#    Examples:
-#      | email                 | password     | message                   |
-#      | tamas@krizsanmunka.hu | Testing2025+ | Invalid email or password |
+
+
+ @UC-3
+ Scenario Outline: Test Login form with credentials by passing invalid Username or Password
+   Given the user enters email "<email>"
+   And  the user enters password "<password>"
+   When the user clicks the Login button
+   Then the error "<message>" should be displayed
+
+   Examples:
+     | email                 | password     | message                   |
+     | tamas@krizsanmunka.hu | Testing2025+ | Invalid email or password |
