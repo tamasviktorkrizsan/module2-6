@@ -3,7 +3,8 @@ Feature: Login
 
   @UC-1
   Scenario Outline: Test Login form with empty credentials
-    Given the user enters email "<email>"
+    Given the user is on the login page 
+    And the user enters email "<email>"
     And the user enters password "<password>"
     When the user clears the "<email>" field
     And the user clicks the Login button
@@ -16,7 +17,8 @@ Feature: Login
 
  @UC-2
  Scenario Outline: Test Login form with credentials by passing Username
-   Given the user enters email "<email>"
+   Given the user is on the login page
+   And the user enters email "<email>"
    And the user enters password "<password>"
    When the user clears the "<password>" field
    And the user clicks the Login button
@@ -29,8 +31,10 @@ Feature: Login
 
  @UC-3
  Scenario Outline: Test Login form with credentials by passing invalid Username or Password
-   Given the user enters email "<email>"
-   And  the user enters password "<password>"
+   
+   Given the user is on the login page
+   And the user enters email "<email>"
+   And the user enters password "<password>"
    When the user clicks the Login button
    Then the error "<message>" should be displayed
 
@@ -41,7 +45,8 @@ Feature: Login
 
  @UC-4
   Scenario Outline: Test Login form with credentials by passing Username & Password
-    Given the user enters email "<email>" 
+    Given the user is on the login page
+    And the user enters email "<email>" 
     And the user enters password "<password>"
     When the user clicks the Login button
     Then the user redirected to the my account page
@@ -54,11 +59,12 @@ Feature: Login
 
 @UC-5
   Scenario: User logs out successfully
-    
-    Given the user enters email "<email>" 
+    Given the user is on the login page
+    And the user enters email "<email>" 
     And the user enters password "<password>"
     And the user clicks the Login button
-    When the user clicks the logout button
+    When the user clicks the user menu
+    And the user clicks the logout button
     Then the user redirected to the login page
     
  Examples:
