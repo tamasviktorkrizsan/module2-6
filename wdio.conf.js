@@ -52,7 +52,7 @@ exports.config = {
     capabilities: [{
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--headless', '--disable-gpu']}
+            args: [ '--disable-gpu']}
     }, /* {
         browserName: 'firefox', 'moz:firefoxOptions': {
  args: ['-headless']

@@ -46,8 +46,24 @@ Feature: Login
     When the user clicks the Login button
     Then the user redirected to the my account page
 
-
-
     Examples:
       | email                                  | password  |
       | customer2@practicesoftwaretesting.com	 | welcome01 |    
+
+
+
+@UC-5
+  Scenario: User logs out successfully
+    
+    Given the user enters email "<email>" 
+    And the user enters password "<password>"
+    And the user clicks the Login button
+    When the user clicks the logout button
+    Then the user redirected to the login page
+    
+ Examples:
+      | email                                  | password  |
+      | customer2@practicesoftwaretesting.com	 | welcome01 |    
+
+
+

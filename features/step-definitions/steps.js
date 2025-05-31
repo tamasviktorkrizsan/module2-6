@@ -5,16 +5,25 @@ const { browser } = require('@wdio/globals');
 
 const LoginPage = require("../po/login.page");
 const MyAccountPage = require("../po/myAccount.page");
+const IndexPage = require("../po/index.page");
+
 
 let loginPage = new LoginPage(process.env.URL + process.env.LOGIN_PATH);
 
-let myAccountPage = new MyAccountPage(process.env.URL + process.env.MY_ACCOUNT_PATH)
+let myAccountPage = new MyAccountPage(process.env.URL + process.env.MY_ACCOUNT_PATH);
+
+let indexPage = new IndexPage(process.env.URL);
 
 
 
 BeforeAll(async function () {
     await loginPage.open();
 });
+
+
+
+
+
 
 
 Given('the user enters email {string}', async function (email) {
@@ -38,6 +47,19 @@ When('the user clicks the Login button', async function () {
 });
 
 
+When('the user clicks the logout button', async function () {
+    
+    // Note: works in head mode but not in headless
+
+    await indexPage.dropdownMenu.click();
+
+    await indexPage.dropdownMenu.waitForDisplayed();
+
+    await indexPage.logoutButton.click();
+
+});
+
+
 Then('the error {string} should be displayed', async function (message) {
     await loginPage.checkErrorMessage(message);
 });
@@ -51,6 +73,21 @@ Then('the user redirected to the my account page', async function () {
      await expect(browser).toHaveUrl('https://practicesoftwaretesting.com/account');
 
 });
+
+
+
+
+Then('the user redirected to the login page', async function () {
+    
+
+     await expect(browser).toHaveUrl('https://practicesoftwaretesting.com/account');
+
+});
+
+
+
+
+
 
 
 After(async function () {

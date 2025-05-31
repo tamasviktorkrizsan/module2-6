@@ -1,4 +1,4 @@
-const { $, expect } = require('@wdio/globals');
+const { $, expect, browser } = require('@wdio/globals');
 const BasePage = require('./base.page.js');
 
 
@@ -17,11 +17,13 @@ class MyAccountPage extends BasePage{
   } 
 
 
-  async checkTitle(title){
+  async checkUrl(url){
 
-  await expect(this.title.toHaveTextContaining(title));
+  await expect(browser).toHaveUrlContaining(url);
 
   }
+
+
 
 }
 
