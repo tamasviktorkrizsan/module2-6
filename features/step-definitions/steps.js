@@ -1,6 +1,8 @@
 
 const {BeforeAll, Given, When, Then, After} = require("@wdio/cucumber-framework");
 
+const { browser } = require('@wdio/globals');
+
 const LoginPage = require("../po/login.page");
 const MyAccountPage = require("../po/myAccount.page");
 
@@ -40,9 +42,14 @@ Then('the error {string} should be displayed', async function (message) {
     await loginPage.checkErrorMessage(message);
 });
 
-     
-Then('validate the title {string} in the My account page.', async function (title) {
-    await myAccountPage.checkTitle(title);
+      
+Then('the user redirected to the my account page', async function () {
+    // await myAccountPage.checkTitle(title);
+
+    // await myAccountPage.checkUrl('/account');
+
+     await expect(browser).toHaveUrl('https://practicesoftwaretesting.com/account');
+
 });
 
 

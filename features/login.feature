@@ -44,8 +44,10 @@ Feature: Login
     Given the user enters email "<email>" 
     And the user enters password "<password>"
     When the user clicks the Login button
-    Then validate the title "<title>" in the My account page.
+    Then the user redirected to the my account page
+
+
 
     Examples:
-      | username                               | password  | title      |
-      | customer2@practicesoftwaretesting.com	 | welcome01 | My account |     
+      | email                                  | password  |
+      | customer2@practicesoftwaretesting.com	 | welcome01 |    
