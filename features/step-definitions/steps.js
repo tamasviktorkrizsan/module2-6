@@ -2,10 +2,12 @@
 const {BeforeAll, Given, When, Then, After} = require("@wdio/cucumber-framework");
 
 const LoginPage = require("../po/login.page");
-/* const MyAccountPage = require("../po/myAccount.page");
-const IndexPage = require("../po/Index.page"); */
+const MyAccountPage = require("../po/myAccount.page");
 
 let loginPage = new LoginPage(process.env.URL + process.env.LOGIN_PATH);
+
+let myAccountPage = new MyAccountPage(process.env.URL + process.env.MY_ACCOUNT_PATH)
+
 
 
 BeforeAll(async function () {
@@ -29,12 +31,6 @@ When('the user clears the {string} field', async function (string) {
 });
 
 
-/* When('the user clears the password field', async function () {
-    await loginPage.clear("Password");
-    // await loginPage.loginButton.click();
-}); */
-
-
 When('the user clicks the Login button', async function () {
     await loginPage.loginButton.click();
 });
@@ -44,11 +40,11 @@ Then('the error {string} should be displayed', async function (message) {
     await loginPage.checkErrorMessage(message);
 });
 
-/*
-Then('validate the title {string} in the dashboard.', async function (title) {
-    await dashboardPage.checkTitle(title);
+     
+Then('validate the title {string} in the My account page.', async function (title) {
+    await myAccountPage.checkTitle(title);
 });
-*/
+
 
 After(async function () {
 

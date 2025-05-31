@@ -1,4 +1,3 @@
-
 Feature: Login
 
 
@@ -38,3 +37,15 @@ Feature: Login
    Examples:
      | email                 | password     | message                   |
      | tamas@krizsanmunka.hu | Testing2025+ | Invalid email or password |
+
+
+ @UC-4
+  Scenario Outline: Test Login form with credentials by passing Username & Password
+    Given the user enters email "<email>" 
+    And the user enters password "<password>"
+    When the user clicks the Login button
+    Then validate the title "<title>" in the My account page.
+
+    Examples:
+      | username                               | password  | title      |
+      | customer2@practicesoftwaretesting.com	 | welcome01 | My account |     
