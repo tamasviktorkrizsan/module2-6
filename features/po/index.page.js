@@ -32,6 +32,7 @@ return $('//*[@id="language"]');
 
 
 get logoutButton(){
+
     return $('/html/body/app-root/app-header/nav/div/div/ul/li[4]/ul/li[7]/a');
 }
 
@@ -72,20 +73,6 @@ async checkSortTitleLanguage(text){
   get searchButton(){
     return $('/html/body/app-root/div/app-overview/div[3]/div[1]/form[2]/div/button[2]');
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

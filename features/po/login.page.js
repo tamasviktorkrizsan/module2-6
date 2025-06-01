@@ -26,19 +26,6 @@ class LoginPage extends BasePage {
     await this.password.setValue(password);
   }
 
-
- /* async clearUser(){
-    await this.userField;
-    await browser.keys([Key.Ctrl,Key.Backspace]);
-  }
-
-
-  async clearPassword(){
-    await this.passwordField;
-    await browser.keys([Key.Ctrl,Key.Backspace]);
-  }*/
-
-
   async clear(field){
     await field;
     await browser.keys([Key.Ctrl,Key.Backspace]);

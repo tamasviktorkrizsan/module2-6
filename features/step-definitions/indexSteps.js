@@ -1,7 +1,5 @@
 const {Given, When, Then} = require("@wdio/cucumber-framework");
 
-const { browser } = require('@wdio/globals');
-
 const IndexPage = require("../po/index.page");
 
 let indexPage = new IndexPage(process.env.URL);
@@ -73,9 +71,6 @@ Then('the text There are no products found will be displayed', async function ()
 });
 
  
-
-
-
 Then('the user redirected to the login page with text Sortieren', async function () {
     
 
