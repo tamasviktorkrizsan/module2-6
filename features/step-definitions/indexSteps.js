@@ -12,12 +12,7 @@ Given('the user is on the index page', async () => {
 
 When('the user clicks on the language selector', async function () {
     
-    
-
     await indexPage.languageSelector.click();
-
-    await indexPage.languageSelector.waitForDisplayed();
-
 });
 
 
@@ -71,7 +66,7 @@ Then('the text There are no products found will be displayed', async function ()
 });
 
  
-Then('the user redirected to the login page with text Sortieren', async function () {
+Then('the user redirected to the index page with text Sortieren', async function () {
     
 
      await indexPage.checkSortTitleLanguage('Sortieren');
