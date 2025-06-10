@@ -49,19 +49,31 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome',
-        'goog:chromeOptions': {
-            args: [ '--disable-gpu']}
-    }, /* {
-        browserName: 'firefox', 'moz:firefoxOptions': {
- args: ['-headless']
- }
-    }, {
-        browserName: 'MicrosoftEdge', 'ms:edgeOptions': {
- args: ['--headless', '--disable-gpu']
- }
-    } */],
+    capabilities: [
+        
+    {
+          maxInstances: 2,
+          browserName: 'chrome',
+          'goog:chromeOptions': {
+            args: ['--disable-gpu']
+        
+           }
+        }, 
+       
+        /* { maxInstances: 2,
+          browserName: 'firefox', 'moz:firefoxOptions': {
+          args: ['-headless']
+          }
+        }, 
+    
+    
+        {maxInstances: 2,
+          browserName: 'MicrosoftEdge', 'ms:edgeOptions': {
+            args: ['--headless', '--disable-gpu']
+            }
+        }     */
+    
+    ],
 
     //
     // ===================
@@ -111,7 +123,19 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     // services: [],
-    //
+
+services: [[
+      'edgedriver',
+      {
+        // see https://github.com/webdriverio-community/node-edgedriver#options for more
+        // options that can be passed into EdgeDriver directly
+        edgedriverOptions: {
+          customEdgeDriverPath: './msedgedriver.exe', // az a path, ahova a letöltött driver-t tetted
+        },
+      },
+    ],],
+
+    
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -160,8 +184,28 @@ exports.config = {
         // <number> timeout for step definitions
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
-        ignoreUndefinedDefinitions: false
-    },
+        ignoreUndefinedDefinitions: false,
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //rety
+        // retry: 2
+    
+    
+    
+    
+    
+    
+      },
 
 
     //
