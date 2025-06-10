@@ -10,11 +10,11 @@ class LoginPage extends BasePage {
   }
 
   get email(){
-    return $('[id="email"]');
+    return $("#email");
   }
 
   get password(){
-    return $('[id="password"]');
+    return $("#password");
   }
 
   async setEmail(email){

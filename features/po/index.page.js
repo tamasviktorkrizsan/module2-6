@@ -20,7 +20,7 @@ return $('/html/body/app-root/app-header/nav/div/div/div/ul/li[1]/a');
 
 get dropdownMenu(){
 
-return $('//*[@id="menu"]');
+return $('//a[contains(text(),"Jack Howe")]');
 
 }
 
@@ -33,7 +33,7 @@ return $('//*[@id="language"]');
 
 get logoutButton(){
 
-    return $('/html/body/app-root/app-header/nav/div/div/ul/li[4]/ul/li[7]/a');
+    return $('*[data-test="nav-sign-out"');
 }
 
 
