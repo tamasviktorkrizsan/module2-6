@@ -2,17 +2,17 @@ Feature: index
 
 
 @UC-1
-  Scenario Outline: User changes language
+  Scenario: User changes language
     
     Given the user is on the index page
     When the user clicks on the language selector
     And the user clicks the language button DE
-    Then the user redirected to the login page with text Sortieren
+    Then the user redirected to the index page with text Sortieren
 
- 
+
 
 @UC-2
-  Scenario Outline: User using search with results
+  Scenario: User using search with results
     
     Given the user is on the index page
     When the user clicks on the search box
@@ -22,8 +22,8 @@ Feature: index
 
 
 
-@UC-2
-  Scenario Outline: User using search with no results
+@UC-3
+  Scenario: User using search with no results
     
     Given the user is on the index page
     When the user clicks on the search box
