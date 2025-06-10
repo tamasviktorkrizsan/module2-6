@@ -2,12 +2,10 @@ Feature: Login
 
 
   @UC-1
-  Scenario Outline: Test Login form with empty credentials
+  Scenario Outline: Test Login form with empty email
     Given the user is on the login page 
-    And the user enters email "<email>"
     And the user enters password "<password>"
-    When the user clears the "<email>" field
-    And the user clicks the Login button
+    When the user clicks the Login button
     Then the error "<message>" should be displayed
 
     Examples:
@@ -16,12 +14,10 @@ Feature: Login
 
 
  @UC-2
- Scenario Outline: Test Login form with credentials by passing Username
+ Scenario Outline: Test Login form with empty password
    Given the user is on the login page
    And the user enters email "<email>"
-   And the user enters password "<password>"
-   When the user clears the "<password>" field
-   And the user clicks the Login button
+   When the user clicks the Login button
    Then the error "<message>" should be displayed
 
    Examples:
@@ -30,7 +26,7 @@ Feature: Login
 
 
  @UC-3
- Scenario Outline: Test Login form with credentials by passing invalid Username or Password
+ Scenario Outline: Test Login form with invalid Username and Password
    
    Given the user is on the login page
    And the user enters email "<email>"
@@ -53,23 +49,16 @@ Feature: Login
 
     Examples:
       | email                                  | password  |
-      | customer2@practicesoftwaretesting.com	 | welcome01 |    
-
+      | customer2@practicesoftwaretesting.com  | welcome01 |    
 
 
 @UC-5
   Scenario: User logs out successfully
-    Given the user is on the login page
-    And the user enters email "<email>" 
-    And the user enters password "<password>"
-    And the user clicks the Login button
+    Given the user is logged in
     When the user clicks the user menu
     And the user clicks the logout button
     Then the user redirected to the login page
     
- Examples:
-      | email                                  | password  |
-      | customer2@practicesoftwaretesting.com	 | welcome01 |    
 
 
 
