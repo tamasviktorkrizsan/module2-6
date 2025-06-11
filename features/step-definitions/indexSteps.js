@@ -30,15 +30,9 @@ When('the user clicks on the search box', async function () {
 
 });
 
-When('the user types text Wood Saw', async function () {
+When('the user types text {string}', async function (string) {
     
-    await indexPage.setSearchBox('Wood Saw');
-
-});
-
-When('the user types text xyz', async function () {
-    
-    await indexPage.setSearchBox('xyz');
+    await indexPage.setSearchBox(string);
 
 });
 
@@ -49,19 +43,18 @@ When('the user clicks the Search button', async function () {
 
 });
 
-
-      
-Then('the product with the name Wood Saw will be displayed', async function () {
+     
+Then('the product with the name {string} will be displayed', async function (string) {
     
 
-     await indexPage.checkSearchResults('Wood Saw');
+     await indexPage.checkSearchResults(string);
 
 });
 
-Then('the text There are no products found will be displayed', async function () {
+Then('the text {string} will be displayed', async function (string) {
     
 
-     await indexPage.checkSearchResults('There are no products found');
+     await indexPage.checkSearchResults(string);
 
 });
 
