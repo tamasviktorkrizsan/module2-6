@@ -33,7 +33,7 @@ class LoginPage extends BasePage {
 
 
   get loginButton(){
-    return $('[value="Login"]');
+    return $('[data-test="login-submit"]');
   }
 
 
