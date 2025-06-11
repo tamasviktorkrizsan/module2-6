@@ -10,60 +10,49 @@ class IndexPage extends BasePage {
   }
 
 
-get sortTitle(){  
+  get sortTitle(){  
+    return $('.grid-title');
+  }
 
 
-return $('/html/body/app-root/app-header/nav/div/div/div/ul/li[1]/a');
+  get dropdownMenu(){
+    return $('#menu');
+  }
 
-}
-
-
-get dropdownMenu(){
-
-return $('//a[contains(text(),"Jack Howe")]');
-
-}
-
-get languageSelector(){
-
-return $('//*[@id="language"]');
-
-}
+  get languageSelector(){
+    return $('#language');
+  }
 
 
-get logoutButton(){
-
-    return $('*[data-test="nav-sign-out"');
-}
-
-
-get DeButton(){
-  return $('/html/body/app-root/app-header/nav/div/div/div/ul/li[1]/a');
-}
-
-get searchResults(){
-  return $('/html/body/app-root/div/app-overview');
-}
+  get logoutButton(){
+    return $('[data-test="nav-sign-out"]');
+  }
 
 
-async checkSortTitleLanguage(text){  
+  get DeButton(){
+   return $('[data-test="lang-de"]');
+  }
 
-  
+
+  get searchResults(){
+    return $('#app-overview');
+  }
+
+
+  async checkSortTitleLanguage(text){  
     await expect(this.sortTitle.getValue(text));
   }
 
 
   async checkSearchResults(text){  
-
-  
     await expect(this.searchResults.getValue(text));
   }
 
 
-
- get searchBox(){
-    return $('[id="search-query"]');
+  get searchBox(){
+    return $('#search-query');
   }
+
 
   async setSearchBox(text){
     await this.searchBox.setValue(text);
@@ -71,10 +60,8 @@ async checkSortTitleLanguage(text){
 
 
   get searchButton(){
-    return $('/html/body/app-root/div/app-overview/div[3]/div[1]/form[2]/div/button[2]');
+    return $('[data-test="search-submit"]');
   }
-
-
 
 }
 
