@@ -60,18 +60,18 @@ exports.config = {
            }
         }, 
        
-        /* { maxInstances: 2,
+        { maxInstances: 2,
           browserName: 'firefox', 'moz:firefoxOptions': {
-          args: ['-headless']
+          args: []
           }
         }, 
     
     
         {maxInstances: 2,
           browserName: 'MicrosoftEdge', 'ms:edgeOptions': {
-            args: ['--headless', '--disable-gpu']
+            args: ['--disable-gpu']
             }
-        }     */
+        }    
     
     ],
 
@@ -186,24 +186,8 @@ services: [[
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false,
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         //rety
-        // retry: 2
-    
-    
-    
-    
-    
+        retry: 2
     
       },
 
