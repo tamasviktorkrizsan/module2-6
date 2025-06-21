@@ -10,7 +10,11 @@ const should = chai.should();
 
 
 Given('the user is on the index page', async () => {
-  await indexPage.open();
+  
+    await browser.reloadSession();
+  
+    await indexPage.open();
+
 });
 
 
@@ -43,7 +47,8 @@ When('the user types text {string}', async function (string) {
 
 When('the user clicks the Search button', async function () {
     
-    await indexPage.searchBox.click();
+     await indexPage.searchButton.click();
+
 
 });
 
@@ -51,14 +56,26 @@ When('the user clicks the Search button', async function () {
 Then('the product with the name {string} will be displayed', async function (string) {
     
 
-     await indexPage.checkSearchResults(string);
+    await indexPage.searchCaption.waitForDisplayed();
+
+    const card = await indexPage.cardTitle.getText();
+
+    await card.should.include(string);
+
 
 });
 
 Then('the text {string} will be displayed', async function (string) {
     
 
-     await indexPage.checkSearchResults(string);
+    //  await indexPage.checkSearchResults(string);
+
+
+    await indexPage.searchCaption.waitForDisplayed();
+
+    const searchResults = await indexPage.noResultsText.getText();
+
+    await searchResults.should.equal('There are no products found.');
 
 });
 
@@ -66,6 +83,20 @@ Then('the text {string} will be displayed', async function (string) {
 Then('the user redirected to the index page with text Sortieren', async function () {
     
 
-     await indexPage.checkSortTitleLanguage('Sortieren');
+await browser.waitUntil(async function () {
+      return (await indexPage.sortTitle.getText()) === 'Sortieren'
+      }, 
+      
+      {
+        timeout: 5000
+      }
+
+    );
+
+    const sortTitle = await indexPage.sortTitle.getText();
+
+    sortTitle.should.equal('Sortieren');
+
+    //  await indexPage.checkSortTitleLanguage('Sortieren');
 
 });
