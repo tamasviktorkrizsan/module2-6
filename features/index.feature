@@ -21,8 +21,8 @@ Feature: index
     Then the product with the name "<resultText>" will be displayed
 
   Examples:
-    | searchText | resultText |
-    | Wood Saw   | Wood Saw   |
+    | searchText         | resultText         |
+    | Combination Pliers | Combination Pliers |
 
 
 
@@ -37,5 +37,5 @@ Feature: index
 
   Examples:
     | searchText | resultText                  |
-    | Wood Saw   | There are no products found |      
+    | xyz        | There are no products found |      
  
