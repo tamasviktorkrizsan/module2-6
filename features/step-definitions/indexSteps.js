@@ -1,8 +1,12 @@
-const {Given, When, Then} = require("@wdio/cucumber-framework");
+import { Given, When, Then } from '@wdio/cucumber-framework';
 
-const IndexPage = require("../po/index.page");
+import IndexPage from '../pageobjects/index.page.js'
 
 let indexPage = new IndexPage(process.env.URL);
+
+import * as chai from 'chai';
+
+const should = chai.should();
 
 
 Given('the user is on the index page', async () => {

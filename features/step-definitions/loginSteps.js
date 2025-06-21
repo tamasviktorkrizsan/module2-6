@@ -1,18 +1,12 @@
+import {browser} from '@wdio/globals';
+import { Given, When, Then } from '@wdio/cucumber-framework';
 
-const {Given, When, Then} = require("@wdio/cucumber-framework");
-
-const { browser} = require('@wdio/globals');
-
-
-const LoginPage = require("../po/login.page");
-
-const IndexPage = require("../po/index.page");
-
+import LoginPage from '../pageobjects/login.page.js';
+import IndexPage from '../pageobjects/index.page.js';
 
 let loginPage = new LoginPage(process.env.URL + process.env.LOGIN_PATH);
 
 let indexPage = new IndexPage(process.env.URL);
-
 
 
 Given('the user is on the login page', async () => {
