@@ -11,7 +11,9 @@
     "@wdio/spec-reporter": "^9.14.0",
     "eslint": "^9.28.0",
     "globals": "^16.2.0",
-    "wdio-edgedriver-service": "^3.0.3"
+    "wdio-edgedriver-service": "^3.0.3",
+    "chai": "^5.2.0",
+    "chai-http": "^5.1.2"
   },
   "dependencies": {
     "selenium-webdriver": "^4.33.0"
