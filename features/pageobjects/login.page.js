@@ -1,7 +1,5 @@
-const { $ } = require('@wdio/globals');
-const BasePage = require('./base.page.js');
-const {Key} = require("webdriverio");
-
+import { $ } from '@wdio/globals'
+import BasePage from './base.page.js';
 
 class LoginPage extends BasePage {
 
@@ -26,11 +24,11 @@ class LoginPage extends BasePage {
     await this.password.setValue(password);
   }
 
-  async clear(field){
+  /* async clear(field){
     await field;
     await browser.keys([Key.Ctrl,Key.Backspace]);
   }
-
+ */
 
   get loginButton(){
     return $('[data-test="login-submit"]');
@@ -48,4 +46,4 @@ class LoginPage extends BasePage {
 
 }
 
-module.exports = LoginPage;
+export default LoginPage;

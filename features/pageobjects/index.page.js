@@ -1,6 +1,5 @@
-const { $ } = require('@wdio/globals');
-const BasePage = require('./base.page.js');
-const {Key} = require("webdriverio");
+import { $ } from '@wdio/globals'
+import BasePage from './base.page.js';
 
 
 class IndexPage extends BasePage {
@@ -65,4 +64,4 @@ class IndexPage extends BasePage {
 
 }
 
-module.exports = IndexPage;
+export default IndexPage;

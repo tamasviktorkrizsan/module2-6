@@ -1,6 +1,6 @@
 import { browser } from '@wdio/globals';
 
-class BasePage {
+export default class BasePage {
 
     constructor(url) {
         this.url = url;
@@ -10,5 +10,3 @@ class BasePage {
         return browser.url(this.url)
     }
 }
-
-module.exports = BasePage;
