@@ -2,8 +2,8 @@ import {browser} from '@wdio/globals';
 import { Given, When, Then } from '@wdio/cucumber-framework';
 import { expect, assert } from 'chai';
 
-import LoginPage from '../pageobjects/login.page.js';
-import IndexPage from '../pageobjects/index.page.js';
+import LoginPage from '../../po/login.page.js';
+import IndexPage from '../../po/index.page.js';
 
 let loginPage = new LoginPage(process.env.URL + process.env.LOGIN_PATH);
 
