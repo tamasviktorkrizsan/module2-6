@@ -2,7 +2,7 @@
   "name": "module2",
   "type": "module",
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.ts"
+    "wdio": "wdio run src/configs/wdio.conf.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",

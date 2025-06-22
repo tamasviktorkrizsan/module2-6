@@ -21,7 +21,7 @@ export const config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './features/**/*.feature'
+        '../tests/features/**/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -162,7 +162,9 @@ services: [[
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./features/step-definitions/*steps.js'],
+        
+        
+        require: ['./src/tests/step-definitions/*steps.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
