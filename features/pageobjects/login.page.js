@@ -19,29 +19,28 @@ class LoginPage extends BasePage {
     await this.email.setValue(email);
   }
 
-
   async setPassword(password){
     await this.password.setValue(password);
   }
-
-  /* async clear(field){
-    await field;
-    await browser.keys([Key.Ctrl,Key.Backspace]);
-  }
- */
 
   get loginButton(){
     return $('[data-test="login-submit"]');
   }
 
-
-  get errorMessage(){
-    return $('[data-test=login-form]');
+  get registerTitle(){
+  return $('[data-test="register-link"]');
   }
 
+  get emailError(){
+    return $('[id="email-error"]');
+  }
 
-  async checkErrorMessage(message){
-    await expect(this.errorMessage.getValue(message));
+ get passwordError(){
+    return $('[id="password-error"]');
+  }
+
+  get loginError(){
+    return $('[data-test="login-error"]');
   }
 
 }
