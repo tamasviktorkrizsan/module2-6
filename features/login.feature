@@ -6,11 +6,11 @@ Feature: Login
     Given the user is on the login page 
     And the user enters password "<password>"
     When the user clicks the Login button
-    Then the error "<message>" should be displayed
+    Then the error "Email is required" should be displayed
 
     Examples:
-      | email                 | password      | message           |
-      | tamas@krizsanmunka.hu | Testing2025+  | Email is required |
+      | password      |
+      | Testing2025+  |
 
 
  @UC-2
@@ -18,11 +18,11 @@ Feature: Login
    Given the user is on the login page
    And the user enters email "<email>"
    When the user clicks the Login button
-   Then the error "<message>" should be displayed
+   Then the error "Password is required" should be displayed
 
    Examples:
-     | email               | password     | message              |
-     | wrong_user@mail.com | Testing2025+ | Password is required |
+     | email               |
+     | wrong_user@mail.com |
 
 
  @UC-3
@@ -32,11 +32,11 @@ Feature: Login
    And the user enters email "<email>"
    And the user enters password "<password>"
    When the user clicks the Login button
-   Then the error "<message>" should be displayed
+   Then the error "Invalid email or password" should be displayed
 
    Examples:
-     | email                 | password     | message                   |
-     | tamas@krizsanmunka.hu | Testing2025+ | Invalid email or password |
+     | email                 | password     |
+     | tamas@krizsanmunka.hu | Testing2025+ |
 
 
  @UC-4
