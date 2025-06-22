@@ -1,5 +1,6 @@
 import {browser} from '@wdio/globals';
 import { Given, When, Then } from '@wdio/cucumber-framework';
+import { expect, assert } from 'chai';
 
 import LoginPage from '../pageobjects/login.page.js';
 import IndexPage from '../pageobjects/index.page.js';
@@ -7,6 +8,7 @@ import IndexPage from '../pageobjects/index.page.js';
 let loginPage = new LoginPage(process.env.URL + process.env.LOGIN_PATH);
 
 let indexPage = new IndexPage(process.env.URL);
+
 
 
 Given('the user is on the login page', async () => {
@@ -45,7 +47,6 @@ When('the user clicks the Login button', async function () {
 });
 
 
-
 When('the user clicks the user menu', async function () {
 
     await indexPage.waitForDisplayed;
@@ -63,18 +64,45 @@ When('the user clicks the logout button', async function () {
 });
 
 
-Then('the error {string} should be displayed', async function (message) {
+Then('the error "Email is required" should be displayed', async function () {
   
-    await loginPage.checkErrorMessage(message);
+    await loginPage.emailError.waitForDisplayed();
+
+    const errorText = await loginPage.emailError.getText();
+
+    assert.equal(errorText, "Email is required");
+
+});
+
+Then('the error "Password is required" should be displayed', async function () {
+  
+    await loginPage.passwordError.waitForDisplayed();
+
+    const errorText = await loginPage.passwordError.getText();
+
+    assert.equal(errorText, "Password is required");
+
+});
+
+
+Then('the error "Invalid email or password" should be displayed', async function () {
+  
+    await loginPage.loginError.waitForDisplayed();
+
+    const errorText = await loginPage.loginError.getText();
+
+    assert.equal(errorText, "Invalid email or password");
 
 });
 
       
 Then('the user redirected to the my account page', async function () {
     
-   
-   
-     await expect(browser).toHaveUrl('https://practicesoftwaretesting.com/account');
+    await indexPage.dropdownMenu.waitForDisplayed();
+
+    const currentUrl = await browser.getUrl();
+    
+    expect(currentUrl).to.equal(process.env.URL + process.env.ACCOUNT_PATH);
 
 });
 
@@ -82,9 +110,21 @@ Then('the user redirected to the my account page', async function () {
        
 Then('the user redirected to the login page', async function () {
      
-     await loginPage.waitForDisplayed;
+  await browser.waitUntil(async function () {
+        
+      return (await loginPage.registerTitle.getText()) === 'Register your account'
+      
+    }, 
+      
+    {
+      timeout: 5000
+    }
 
-     await expect(browser).toHaveUrl('https://practicesoftwaretesting.com/auth/login');
+  );
+
+  const currentUrl = await browser.getUrl();
+
+  expect(currentUrl).to.equal(process.env.URL + process.env.LOGIN_PATH);
 
 });
 
