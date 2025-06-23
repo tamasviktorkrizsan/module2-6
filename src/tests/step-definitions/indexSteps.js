@@ -20,14 +20,14 @@ Given('the user is on the index page', async () => {
 
 When('the user clicks on the language selector', async function () {
     
-    await indexPage.languageSelector.click();
+    await indexPage.navbar.languageSelector.click();
 });
 
 
 
 When('the user clicks the language button DE', async function () {
     
-    await indexPage.DeButton.click();
+    await indexPage.navbar.DeButton.click();
 
 });
 
