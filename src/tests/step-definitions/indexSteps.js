@@ -1,12 +1,12 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 
-import IndexPage from '../../po/pages/index.page.js'
-
-let indexPage = new IndexPage(process.env.URL);
-
 import * as chai from 'chai';
 
 const should = chai.should();
+
+import IndexPage from '../../po/pages/index.page.js'
+
+let indexPage = new IndexPage(process.env.URL);
 
 
 Given('the user is on the index page', async () => {
