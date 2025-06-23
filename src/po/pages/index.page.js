@@ -1,39 +1,27 @@
 import { $ } from '@wdio/globals'
 import BasePage from '../components/common/base.page.js';
+import NavbarComponent from '../components/common/navbar.component.js';
 
 
 class IndexPage extends BasePage {
 
   constructor(url){
     super(url)
+
+  this.navbar = new NavbarComponent();
+
   }
 
   get sortTitle(){  
     return $('.grid-title');
   }
 
-  get dropdownMenu(){
-    return $('#menu');
-  }
-
-  get languageSelector(){
-    return $('#language');
-  }
-
-  get logoutButton(){
-    return $('[data-test="nav-sign-out"]');
-  }
-
-  get DeButton(){
-   return $('[data-test="lang-de"]');
+  get searchBox(){
+    return $('#search-query');
   }
 
   get searchResults(){
     return $('#app-overview');
-  }
-
-  get searchBox(){
-    return $('#search-query');
   }
 
   async setSearchBox(text){
@@ -42,10 +30,6 @@ class IndexPage extends BasePage {
 
   get searchButton(){
     return $('[data-test="search-submit"]');
-  }
-
-  get accountTitle(){  
-    return $('[data-test="page-title"]');
   }
 
   get searchTerm(){
