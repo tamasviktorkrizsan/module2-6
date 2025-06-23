@@ -20,9 +20,6 @@ class IndexPage extends BasePage {
     return $('#search-query');
   }
 
-  get searchResults(){
-    return $('#app-overview');
-  }
 
   async setSearchBox(text){
     await this.searchBox.setValue(text);
