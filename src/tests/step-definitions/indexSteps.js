@@ -1,6 +1,6 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 
-import IndexPage from '../../po/index.page.js'
+import IndexPage from '../../po/pages/index.page.js'
 
 let indexPage = new IndexPage(process.env.URL);
 
