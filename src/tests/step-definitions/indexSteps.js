@@ -76,11 +76,11 @@ Then('the text {string} will be displayed', async function (string) {
 });
 
  
-Then('the user redirected to the index page with text Sortieren', async function () {
+Then('the user redirected to the index page with text {string}', async function (string) {
     
 
-await browser.waitUntil(async function () {
-      return (await indexPage.sortTitle.getText()) === 'Sortieren'
+    await browser.waitUntil(async function () {
+      return (await indexPage.sortTitle.getText()) === string
       }, 
       
       {
@@ -91,7 +91,7 @@ await browser.waitUntil(async function () {
 
     const sortTitle = await indexPage.sortTitle.getText();
 
-    sortTitle.should.equal('Sortieren');
+    sortTitle.should.equal(string);
 
 
 });

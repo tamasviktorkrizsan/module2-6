@@ -7,8 +7,11 @@ Feature: index
     Given the user is on the index page
     When the user clicks on the language selector
     And the user clicks the language button DE
-    Then the user redirected to the index page with text Sortieren
+    Then the user redirected to the index page with text "<text>"
 
+  Examples:
+    | text      |
+    | Sortieren |
 
 
 @UC-2
