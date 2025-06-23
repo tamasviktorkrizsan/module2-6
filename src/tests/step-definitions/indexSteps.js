@@ -67,10 +67,6 @@ Then('the product with the name {string} will be displayed', async function (str
 
 Then('the text {string} will be displayed', async function (string) {
     
-
-    //  await indexPage.checkSearchResults(string);
-
-
     await indexPage.searchCaption.waitForDisplayed();
 
     const searchResults = await indexPage.noResultsText.getText();
@@ -97,6 +93,5 @@ await browser.waitUntil(async function () {
 
     sortTitle.should.equal('Sortieren');
 
-    //  await indexPage.checkSortTitleLanguage('Sortieren');
 
 });
