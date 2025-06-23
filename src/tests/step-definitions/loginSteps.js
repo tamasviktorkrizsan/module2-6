@@ -3,12 +3,11 @@ import { Given, When, Then } from '@wdio/cucumber-framework';
 import { expect, assert } from 'chai';
 
 import LoginPage from '../../po/pages/login.page.js';
-import IndexPage from '../../po/pages/index.page.js';
+import AccountPage from '../../po/pages/index.page.js';
 
 let loginPage = new LoginPage(process.env.URL + process.env.LOGIN_PATH);
 
-let indexPage = new IndexPage(process.env.URL);
-
+let accountPage = new AccountPage(process.env.URL + process.env.ACCOUNT_PATH);
 
 
 Given('the user is on the login page', async () => {
@@ -42,16 +41,13 @@ When('the user clears the {string} field', async function (string) {
 When('the user clicks the Login button', async function () {
     await loginPage.loginButton.click();
 
-
-
 });
 
 
 When('the user clicks the user menu', async function () {
 
-    await indexPage.waitForDisplayed;
-
-    await indexPage.dropdownMenu.click();
+    await accountPage.waitForDisplayed;
+    await accountPage.navbar.dropdownMenu.click();
 
 });
 
@@ -59,7 +55,7 @@ When('the user clicks the user menu', async function () {
 When('the user clicks the logout button', async function () {
     
 
-    await indexPage.logoutButton.click();
+    await accountPage.navbar.logoutButton.click();
 
 });
 
@@ -98,7 +94,7 @@ Then('the error "Invalid email or password" should be displayed', async function
       
 Then('the user redirected to the my account page', async function () {
     
-    await indexPage.dropdownMenu.waitForDisplayed();
+    await accountPage.navbar.dropdownMenu.waitForDisplayed();
 
     const currentUrl = await browser.getUrl();
     
