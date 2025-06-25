@@ -1,5 +1,5 @@
 import { $ } from '@wdio/globals'
-import BasePage from '../components/common/base.page.js';
+import BasePage from './base.page.js';
 
 class LoginPage extends BasePage {
 
