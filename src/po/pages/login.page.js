@@ -1,48 +1,46 @@
-import { $ } from '@wdio/globals'
+import { $ } from '@wdio/globals';
 import BasePage from './base.page.js';
 
 class LoginPage extends BasePage {
-
-  constructor(url){
-    super(url)
+  constructor(url) {
+    super(url);
   }
 
-  get email(){
-    return $("#email");
+  get email() {
+    return $('#email');
   }
 
-  get password(){
-    return $("#password");
+  get password() {
+    return $('#password');
   }
 
-  async setEmail(email){
+  async setEmail(email) {
     await this.email.setValue(email);
   }
 
-  async setPassword(password){
+  async setPassword(password) {
     await this.password.setValue(password);
   }
 
-  get loginButton(){
+  get loginButton() {
     return $('[data-test="login-submit"]');
   }
 
-  get registerTitle(){
-  return $('[data-test="register-link"]');
+  get registerTitle() {
+    return $('[data-test="register-link"]');
   }
 
-  get emailError(){
+  get emailError() {
     return $('[id="email-error"]');
   }
 
- get passwordError(){
+  get passwordError() {
     return $('[id="password-error"]');
   }
 
-  get loginError(){
+  get loginError() {
     return $('[data-test="login-error"]');
   }
-
 }
 
 export default LoginPage;

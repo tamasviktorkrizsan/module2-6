@@ -1,21 +1,17 @@
-import { $ } from '@wdio/globals'
+import { $ } from '@wdio/globals';
 import BasePage from './base.page.js';
 import NavbarComponent from '../components/common/navbar.component.js';
 
-
 class AccountPage extends BasePage {
-
-  constructor(url){
-    super(url)
+  constructor(url) {
+    super(url);
 
     this.navbar = new NavbarComponent();
-  
-  }
-  
-  get accountTitle(){  
-    return $('[data-test="page-title"]');
   }
 
+  get accountTitle() {
+    return $('[data-test="page-title"]');
+  }
 }
 
 export default AccountPage;

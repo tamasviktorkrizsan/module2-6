@@ -1,23 +1,21 @@
-import { $ } from '@wdio/globals'
+import { $ } from '@wdio/globals';
 
 class NavbarComponent {
-
-  get dropdownMenu(){
+  get dropdownMenu() {
     return $('#menu');
   }
 
-  get languageSelector(){
+  get languageSelector() {
     return $('#language');
   }
 
-  get logoutButton(){
+  get logoutButton() {
     return $('[data-test="nav-sign-out"]');
   }
 
-  get DeButton(){
-   return $('[data-test="lang-de"]');
+  get DeButton() {
+    return $('[data-test="lang-de"]');
   }
-
 }
 
 export default NavbarComponent;
