@@ -3,6 +3,8 @@
   "type": "module",
   "scripts": {
     "wdio": "wdio run src/configs/wdio.conf.ts",
+    "allure:generate": "allure generate reports --clean -o reports/allure-report",
+    "allure:open": "allure open reports/allure-report",
     "format": "prettier . --write"
   },
   "devDependencies": {
