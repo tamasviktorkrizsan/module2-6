@@ -55,21 +55,21 @@ export const config = {
           maxInstances: 2,
           browserName: 'chrome',
           'goog:chromeOptions': {
-            args: ['--disable-gpu']
+            args: ['--disable-gpu', '--headless', '--window-size=1280,800']
         
            }
         }, 
        
         { maxInstances: 2,
           browserName: 'firefox', 'moz:firefoxOptions': {
-          args: []
+          args: ['--headless', '--window-size=1280,800']
           }
         }, 
     
     
         {maxInstances: 2,
           browserName: 'MicrosoftEdge', 'ms:edgeOptions': {
-            args: ['--disable-gpu']
+            args: ['--disable-gpu', '--headless', '--window-size=1280,800']
             }
         }    
     
