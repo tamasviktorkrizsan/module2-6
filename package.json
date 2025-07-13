@@ -5,7 +5,8 @@
     "test": "wdio run src/configs/wdio.conf.ts",
     "allure:generate": "allure generate reports --clean -o reports/allure-report",
     "allure:open": "allure open reports/allure-report",
-    "format": "prettier . --write"
+    "format-prettier": "prettier . --write",
+    "format-eslint": "eslint ."
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^9.16.2",
@@ -15,7 +16,8 @@
     "@wdio/spec-reporter": "^9.16.2",
     "chai": "^5.2.0",
     "chai-http": "^5.1.2",
-    "globals": "^16.2.0",
+    "eslint": "^9.31.0",
+    "globals": "^16.3.0",
     "prettier": "^3.6.2",
     "wdio-edgedriver-service": "^3.0.3",
     "wdio-html-nice-reporter": "^8.1.7"
