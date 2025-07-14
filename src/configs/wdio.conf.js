@@ -69,7 +69,7 @@ export const config = {
     
         {maxInstances: 2,
           browserName: 'MicrosoftEdge', 'ms:edgeOptions': {
-            args: ['--disable-gpu', '--headless', '--window-size=1280,800']
+            args: ['--headless', '--disable-gpu', '--window-size=1280,800']
             }
         }    
     
