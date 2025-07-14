@@ -81,10 +81,17 @@ Then('the user redirected to the my account page', async function () {
 });
 
 Then('the user redirected to the login page', async function () {
+    
+  // await loginPage.loginButton.waitForDisplayed()
+  
   await browser.waitUntil(
     async function () {
       return (
-        (await loginPage.registerTitle.getText()) === 'Register your account'
+        // (await loginPage.registerTitle.getText()) === 'Register your account'
+
+        (await loginPage.separator.getText()) === 'or use'
+
+        // await loginPage.loginButton.waitForDisplayed()
       );
     },
 

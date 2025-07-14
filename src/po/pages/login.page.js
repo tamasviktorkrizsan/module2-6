@@ -22,6 +22,10 @@ class LoginPage extends BasePage {
     await this.password.setValue(password);
   }
 
+  get separator() {
+    return $('.separator');
+  }
+
   get loginButton() {
     return $('[data-test="login-submit"]');
   }
