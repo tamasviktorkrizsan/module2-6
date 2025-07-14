@@ -1,7 +1,7 @@
 Feature: Login
 
 
-  @UC-1
+  @login
   Scenario Outline: Test Login form with empty email
     Given the user is on the login page 
     And the user enters password "<password>"
@@ -13,7 +13,7 @@ Feature: Login
       | Testing2025+  |
 
 
- @UC-2
+ @login
  Scenario Outline: Test Login form with empty password
    Given the user is on the login page
    And the user enters email "<email>"
@@ -25,7 +25,7 @@ Feature: Login
      | wrong_user@mail.com |
 
 
- @UC-3
+ @login
  Scenario Outline: Test Login form with invalid Username and Password
    
    Given the user is on the login page
@@ -39,7 +39,7 @@ Feature: Login
      | tamas@krizsanmunka.hu | Testing2025+ |
 
 
- @UC-4
+  @login
   Scenario Outline: Test Login form with credentials by passing Username & Password
     Given the user is on the login page
     And the user enters email "<email>" 
@@ -52,13 +52,10 @@ Feature: Login
       | customer2@practicesoftwaretesting.com  | welcome01 |    
 
 
-@UC-5
+  @logout
   Scenario: User logs out successfully
     Given the user is logged in
     When the user clicks the user menu
     And the user clicks the logout button
     Then the user redirected to the login page
     
-
-
-

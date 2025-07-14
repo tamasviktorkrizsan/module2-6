@@ -1,7 +1,7 @@
 Feature: index
 
 
-@UC-1
+  @languageSelector
   Scenario: User changes language
     
     Given the user is on the index page
@@ -14,7 +14,7 @@ Feature: index
     | Sortieren |
 
 
-@UC-2
+  @searchBox
   Scenario Outline: User using search with results
     
     Given the user is on the index page
@@ -29,7 +29,7 @@ Feature: index
 
 
 
-@UC-3
+  @searchBox
   Scenario Outline: User using search with no results
     
     Given the user is on the index page
