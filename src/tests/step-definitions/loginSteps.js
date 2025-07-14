@@ -3,7 +3,7 @@ import { Given, When, Then } from '@wdio/cucumber-framework';
 import { expect, assert } from 'chai';
 
 import LoginPage from '../../po/pages/login.page.js';
-import AccountPage from '../../po/pages/index.page.js';
+import AccountPage from '../../po/pages/account.page.js';
 
 let loginPage = new LoginPage(process.env.URL + process.env.LOGIN_PATH);
 
@@ -25,6 +25,7 @@ Given('the user is logged in', async function () {
   await loginPage.open();
   await loginPage.setEmail(process.env.email);
   await loginPage.setPassword(process.env.password);
+  await loginPage.loginButton.click();
 });
 
 When('the user clears the {string} field', async function (string) {
