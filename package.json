@@ -3,6 +3,7 @@
   "type": "module",
   "scripts": {
     "test": "wdio run src/configs/wdio.conf.ts",
+    "test-logout": "wdio run src/configs/wdio.conf.ts --cucumberOpts.tagExpression='@logout'",
     "allure:generate": "allure generate reports --clean -o reports/allure-report",
     "allure:open": "allure open reports/allure-report",
     "format-prettier": "prettier . --write",
