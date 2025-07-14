@@ -3,7 +3,10 @@
   "type": "module",
   "scripts": {
     "test": "wdio run src/configs/wdio.conf.ts",
-    "test-logout": "wdio run src/configs/wdio.conf.ts --cucumberOpts.tagExpression='@logout'",
+    "test:login": "wdio run src/configs/wdio.conf.ts --cucumberOpts.tagExpression='@login'",
+    "test:logout": "wdio run src/configs/wdio.conf.ts --cucumberOpts.tagExpression='@logout'",
+    "test:search-box": "wdio run src/configs/wdio.conf.ts --cucumberOpts.tagExpression='@searchBox'",
+    "test:language-selector": "wdio run src/configs/wdio.conf.ts --cucumberOpts.tagExpression='@languageSelector'",
     "allure:generate": "allure generate reports --clean -o reports/allure-report",
     "allure:open": "allure open reports/allure-report",
     "format-prettier": "prettier . --write",
